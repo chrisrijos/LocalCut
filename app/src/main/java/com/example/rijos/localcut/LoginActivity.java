@@ -16,11 +16,15 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseApp;
-
+/**
+ * @Author: Chris Rijos
+ * Handles all of the front end login information and the listeners for the signin and signup buttons
+ * will be expanded to include googleOAuth and FacebookOAuth.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private static final String FIREBASE_URL = "https://shining-heat-4421.firebaseio.com/";
-    private Firebase myFireBaseRef;
+    public Firebase myFireBaseRef;
     private Button signin;
     private Button signup;
     private EditText username;
@@ -48,32 +52,11 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "PRE", Toast.LENGTH_LONG).show();
                 User user = new User(username.getText().toString(),password.getText().toString());
-                UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user);
+                UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user, myFireBaseRef);
                 _authenticationHandler.createUser();
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
