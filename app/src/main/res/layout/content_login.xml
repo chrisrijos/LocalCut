@@ -50,4 +50,17 @@
         android:layout_alignTop="@+id/signupButton"
         android:layout_alignRight="@+id/passwordEditText"
         android:layout_alignEnd="@+id/passwordEditText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="LocalCut_Prototype"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/userEditText"
+        android:layout_alignStart="@+id/userEditText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/userEditText"
+        android:layout_alignEnd="@+id/userEditText" />
 </RelativeLayout>

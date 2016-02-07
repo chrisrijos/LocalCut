@@ -1,4 +1,5 @@
 package com.example.rijos.localcut;
+import com.example.rijos.localcut.controllers.UserAuthenticationHandler;
 import com.example.rijos.localcut.models.User;
 
 import android.os.Bundle;
@@ -47,7 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "TEST_SIGNUP", Toast.LENGTH_LONG).show();
+                User user = new User(username.getText().toString(),password.getText().toString());
+                UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user);
+                _authenticationHandler.createUser();
             }
         });
     }

@@ -36,18 +36,21 @@ public class UserAuthenticationHandler {
         this.tango = tango;
     }
 
+    /*Creates a new user in Firebase after checking if the user is not null*/
     public void createUser(){
+     if(this.tango != null) {
+            firebaseRef.createUser(this.tango.getEmail(), this.tango.getPassword(), new Firebase.ValueResultHandler<Map<String, Object>>() {
+                @Override
+                public void onSuccess(Map<String, Object> stringObjectMap) {
+                    System.out.println("Successfully created user account with uid: \"" + stringObjectMap.get("uid"));
+                }
 
-        firebaseRef.createUser(this.tango.getEmail(), this.tango.getPassword(), new Firebase.ValueResultHandler<Map<String, Object>>() {
-            @Override
-            public void onSuccess(Map<String, Object> stringObjectMap) {
-                System.out.println("Successfully created user account with uid: \""+ stringObjectMap.get("uid") );
-            }
-
-            @Override
-            public void onError(FirebaseError firebaseError) {
-                //there was an error
-            }
-        });
+                @Override
+                public void onError(FirebaseError firebaseError) {
+                    //there was an error
+                    System.out.println("Database write error");
+                }
+            });
+        }
     }
 }
