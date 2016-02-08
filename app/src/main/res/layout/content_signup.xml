@@ -8,9 +8,8 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.rijos.localcut.SignupActivity"
-    tools:showIn="@layout/activity_signup">
+    tools:showIn="@layout/activity_signup"
+    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#ccd5db"
+        android:background="#2d3238"
         android:focusable="false">
 
         <TextView
@@ -30,7 +29,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Create an Account"
             android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColorLink="#ffffff"
+            android:textColor="#ffffff" />
 
         <EditText
             android:layout_width="match_parent"
@@ -38,20 +39,26 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/fullname"
-            android:hint="full name" />
+            android:hint="Fullname"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/emailaddress"
-            android:hint="email address" />
+            android:hint="Email Address"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
-            android:password="false"
-            android:id="@+id/password" />
+            android:hint="Password"
+            android:password="true"
+            android:id="@+id/password"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff" />
 
         <EditText
             android:layout_width="match_parent"
@@ -59,14 +66,20 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/dummy"
-            android:hint="password" />
+            android:hint="password"
+            android:password="true"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Account"
             android:id="@+id/create"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="#a05e5e"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 </RelativeLayout>

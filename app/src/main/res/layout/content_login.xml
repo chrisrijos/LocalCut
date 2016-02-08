@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.rijos.localcut.LoginActivity"
     tools:showIn="@layout/activity_login"
-    android:background="#1f1f1f">
+    android:background="#2d3238">
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,17 +25,17 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="0dp"
         android:hint="password"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="#030202" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/signupButton"
-        android:layout_below="@+id/signinButton"
-        android:layout_alignLeft="@+id/signinButton"
-        android:layout_alignStart="@+id/signinButton"
-        android:layout_marginTop="30dp" />
+        android:layout_alignTop="@+id/signinButton"
+        android:layout_alignRight="@+id/passwordEditText"
+        android:layout_alignEnd="@+id/passwordEditText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,9 +47,9 @@
         android:hint="username"
         android:textAlignment="center"
         android:layout_above="@+id/passwordEditText"
-        android:layout_alignLeft="@+id/passwordEditText"
-        android:layout_alignStart="@+id/passwordEditText"
-        android:layout_marginBottom="48dp" />
+        android:layout_alignRight="@+id/signupButton"
+        android:layout_alignEnd="@+id/signupButton"
+        android:textColor="#040505" />
 
     <Button
         android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
         android:text="Sign In"
         android:id="@+id/signinButton"
         android:layout_below="@+id/passwordEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp" />
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignStart="@+id/passwordEditText" />
 
 </RelativeLayout>
