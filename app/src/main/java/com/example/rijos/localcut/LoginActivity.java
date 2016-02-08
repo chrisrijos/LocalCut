@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //set up user authentication to handle activity
                 Toast.makeText(getApplicationContext(), "TEST_SIGNIN", Toast.LENGTH_LONG).show();
             }
         });
@@ -54,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), "PRE", Toast.LENGTH_LONG).show();
-                User user = new User(username.getText().toString(),password.getText().toString());
+                /*User user = new User(username.getText().toString(),password.getText().toString());
                 UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user, myFireBaseRef);
-                _authenticationHandler.createUser();
+                _authenticationHandler.createUser();*/
                 //intent to swap activities
                 Intent i = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(i);
