@@ -5,5 +5,11 @@ package com.example.rijos.localcut.models;
  * Creates a model for the Barber object, containing all of the critical data
  * The barber needs to stay validated
  */
-public class Barber {
+public class Barber extends User{
+
+    public Barber(){
+        super();
+    }
+
+
 }

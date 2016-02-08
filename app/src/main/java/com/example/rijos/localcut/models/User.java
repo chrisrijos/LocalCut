@@ -10,6 +10,7 @@ public class User{
     private String fullname;
     private String email;
     private String password;
+    private Boolean isBarber = false;
 
     public User(){}
 

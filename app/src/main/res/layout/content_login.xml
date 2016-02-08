@@ -11,16 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.rijos.localcut.LoginActivity"
     tools:showIn="@layout/activity_login"
-    android:background="#441b1b">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/userEditText"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    android:background="#1f1f1f">
 
     <EditText
         android:layout_width="wrap_content"
@@ -28,39 +19,45 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/passwordEditText"
-        android:layout_below="@+id/userEditText"
-        android:layout_alignLeft="@+id/userEditText"
-        android:layout_alignStart="@+id/userEditText"
-        android:password="true" />
+        android:password="true"
+        android:background="#ffffff"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="0dp"
+        android:hint="password"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/signupButton"
-        android:layout_below="@+id/passwordEditText"
+        android:layout_below="@+id/signinButton"
+        android:layout_alignLeft="@+id/signinButton"
+        android:layout_alignStart="@+id/signinButton"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/userEditText"
+        android:background="#ffffff"
+        android:hint="username"
+        android:textAlignment="center"
+        android:layout_above="@+id/passwordEditText"
         android:layout_alignLeft="@+id/passwordEditText"
-        android:layout_alignStart="@+id/passwordEditText" />
+        android:layout_alignStart="@+id/passwordEditText"
+        android:layout_marginBottom="48dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:id="@+id/signinButton"
-        android:layout_alignTop="@+id/signupButton"
-        android:layout_alignRight="@+id/passwordEditText"
-        android:layout_alignEnd="@+id/passwordEditText" />
+        android:layout_below="@+id/passwordEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="LocalCut_Prototype"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/userEditText"
-        android:layout_alignStart="@+id/userEditText"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/userEditText"
-        android:layout_alignEnd="@+id/userEditText" />
 </RelativeLayout>

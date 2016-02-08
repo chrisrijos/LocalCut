@@ -2,9 +2,9 @@ package com.example.rijos.localcut;
 import com.example.rijos.localcut.controllers.UserAuthenticationHandler;
 import com.example.rijos.localcut.models.User;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button signup;
     private EditText username;
     private EditText password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                 User user = new User(username.getText().toString(),password.getText().toString());
                 UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user, myFireBaseRef);
                 _authenticationHandler.createUser();
+                //intent to swap activities
+                Intent i = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(i);
+
             }
         });
     }
