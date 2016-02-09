@@ -38,14 +38,25 @@ public class SignupActivity extends AppCompatActivity {
         /*Sets android context for this part of the firebase activity*/
         Firebase.setAndroidContext(this);
 
-        /*Helper to validate fields in forms*/
-        FieldValidation validator = new FieldValidation(SignupActivity.this);
 
-        if(validator.isPasswordMatching(password.getText().toString(),dummy.getText().toString())){
-            //displays toast if incorrect passwords are inputted
+        //Set OnFocusActionListener for password field and include validator below
+        password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
-            Toast.makeText(SignupActivity.this,"Your passwords do not match",Toast.LENGTH_LONG).show();
-        }
+            /*Helper to validate fields in forms*/
+            FieldValidation validator = new FieldValidation(SignupActivity.this);
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus){
+                /*When focus is lost check, if the text field has valid values*/
+                if(validator.isPasswordMatching(password.getText().toString(),dummy.getText().toString())){
+
+                }else{
+                    //if passwords do not match make this toast otherwise continue to let the user make the account
+                    Toast.makeText(SignupActivity.this,"Passwords do not match",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
 

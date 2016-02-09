@@ -9,7 +9,7 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     tools:showIn="@layout/activity_signup"
-    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+    android:theme="@android:style/Theme.Holo.NoActionBar" >
 
     <LinearLayout
         android:orientation="vertical"
@@ -54,8 +54,10 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Password"
             android:password="true"
+            android:maxLines="1"
             android:id="@+id/password"
             android:textColorHint="#ffffff"
             android:textColor="#ffffff" />
@@ -66,8 +68,9 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/dummy"
-            android:hint="password"
+            android:hint="Password"
             android:password="true"
+            android:maxLines="1"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff" />
 
@@ -77,7 +80,7 @@
             android:text="Create Account"
             android:id="@+id/create"
             android:layout_gravity="center_horizontal"
-            android:background="#a05e5e"
+            android:background="#195f7a"
             android:textColorHint="#ffffff"
             android:textColor="#ffffff" />
 
