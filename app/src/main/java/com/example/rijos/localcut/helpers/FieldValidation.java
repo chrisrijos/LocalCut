@@ -30,4 +30,7 @@ public class FieldValidation {
 
         return true;
     }
+    public boolean isEmailCorrect(){
+        return true;
+    }
 }

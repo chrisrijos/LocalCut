@@ -1,6 +1,7 @@
 package com.example.rijos.localcut;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,11 +49,26 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus){
                 /*When focus is lost check, if the text field has valid values*/
-                if(validator.isPasswordMatching(password.getText().toString(),dummy.getText().toString())){
+                if(!(password.getText().toString().length() > 6)){
+                    if(validator.isPasswordMatching(password.getText().toString(),dummy.getText().toString())){
+                        createAccount.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(SignupActivity.this,"Passwords match",Toast.LENGTH_LONG).show();
 
-                }else{
-                    //if passwords do not match make this toast otherwise continue to let the user make the account
-                    Toast.makeText(SignupActivity.this,"Passwords do not match",Toast.LENGTH_LONG).show();
+                                //Firebase create user if email validates
+                                Firebase mRef = new Firebase(FIREBASE_URL);
+
+                                //continue to next activity
+                                Intent i = new Intent(getApplicationContext(),ClientServiceViewer.class);
+                                startActivity(i);
+
+                            }
+                        });
+                    }else{
+                        //if passwords do not match make this toast otherwise continue to let the user make the account
+                        Toast.makeText(SignupActivity.this,"Passwords do not match",Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });

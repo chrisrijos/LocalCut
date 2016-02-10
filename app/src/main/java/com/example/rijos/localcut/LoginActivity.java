@@ -53,10 +53,6 @@ public class LoginActivity extends Activity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*User user = new User(username.getText().toString(),password.getText().toString());
-                UserAuthenticationHandler _authenticationHandler = new UserAuthenticationHandler(user, myFireBaseRef);
-                _authenticationHandler.createUser();*/
-                //intent to swap activities
                 Intent i = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivity(i);
             }
